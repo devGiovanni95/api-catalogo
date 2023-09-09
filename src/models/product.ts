@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import Category from "./category";
 
 @Entity()
@@ -19,8 +19,7 @@ export default class Product extends BaseEntity{
     @Column({default: false})
     promotion!: boolean
 
-    @ManyToOne(() => Category) // Define a relação muitos-para-um com a entidade Category
-    @JoinColumn({ name: "category_id" }) // Define o nome da coluna que armazenará a chave estrangeira
+    @ManyToOne(() => Category, (category) => category.products) // Define a relação muitos-para-um com a entidade Category
     category!: Category;
     
 }

@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import Product from "./product";
 
 @Entity()
 export default class Category extends BaseEntity{
@@ -12,7 +13,7 @@ export default class Category extends BaseEntity{
     @Column()
     description!: string
     
-    @OneToMany(() => Product, product => product.category) // Define a relação um-para-muitos com a entidade Product
-    products!: Product[]; // Esta propriedade conterá a lista de produtos relacionados a esta categoria
+    @OneToMany(() => Product, (product) => product.category) // Define a relação um-para-muitos com a entidade Product
+    products?: Product[]; // Esta propriedade conterá a lista de produtos relacionados a esta categoria
 
 }
