@@ -1,7 +1,7 @@
-import { Router } from "express";
-import categoryRoutes from "./category/category.routes";
-import productRoutes from "./product/product.routes";
-import userRoutes from "./user/user.routes";
+import {Router} from 'express'
+import categoryRoutes from './category/category.routes';
+import productRoutes from './product/product.routes';
+import userRoutes from './user/user.routes';
 
 const routes = Router();
 

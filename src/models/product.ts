@@ -33,6 +33,7 @@ export default class Product extends BaseEntity{
     expiration_date!: Date;
 
     @ManyToOne(() => Category, (category) => category.products) // Define a relação muitos-para-um com a entidade Category
+    
     category!: Category;
     
 }
