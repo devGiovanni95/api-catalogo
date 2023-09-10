@@ -2,7 +2,7 @@ import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGenerat
 import Category from "./category";
 import { timeStamp } from "console";
 
-@Entity()
+@Entity('product')
 export default class Product extends BaseEntity{
     
     @PrimaryGeneratedColumn()

@@ -1,7 +1,7 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import Product from "./product";
 
-@Entity()
+@Entity('category')
 export default class Category extends BaseEntity{
     
     @PrimaryGeneratedColumn()
