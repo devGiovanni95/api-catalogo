@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export default class User extends BaseEntity{
@@ -14,5 +14,11 @@ export default class User extends BaseEntity{
 
     @Column()
     password!: string
+
+    @CreateDateColumn()
+    created_at!: Date;
+
+    @CreateDateColumn()
+    updated_at?: Date;
     
 }
