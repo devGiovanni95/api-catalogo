@@ -9,9 +9,9 @@ dotenv.config()
 AppDataSource.initialize().then(()=>{
 
     const app = express()
-    
+    app.use(cors())
     app.use(cors({
-        origin:['http://localhost:3000','https://api-catalogo-h0fl.onrender.com/']
+        origin:['http://localhost:3000','https://api-catalogo-h0fl.onrender.com','https://api-catalogo-h0fl.onrender.com/*']
     }))
     
     app.use(express.json())
