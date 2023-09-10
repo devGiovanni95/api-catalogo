@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon --exec ts-node ./src/server.ts",
+    "build": "npx tsc",
     "migration:generate": "npx typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:generate ./src/database/migrations/default",
     "migration:run": "npx typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:run"
   },
